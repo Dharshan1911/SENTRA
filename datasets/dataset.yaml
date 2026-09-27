@@ -1,0 +1,16 @@
+train: C:\Users\dhars\Desktop\SENTRA\datasets\images\train
+val: C:\Users\dhars\Desktop\SENTRA\datasets\images\val
+test: C:\Users\dhars\Desktop\SENTRA\datasets\images\test
+nc: 11
+names:
+- Helmet
+- Gloves
+- Vest
+- Boots
+- Goggles
+- none
+- Person
+- no_helmet
+- no_goggle
+- no_gloves
+- no_boots

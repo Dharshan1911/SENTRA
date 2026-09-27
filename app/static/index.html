@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTRA - Safety Equipment & Noncompliance Tracking</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SENTRA</h1>
+            <h2>Safety Equipment & Noncompliance Tracking using Real-time AI</h2>
+        </header>
+        
+        <div class="controls">
+            <button id="btn-image" class="active">IMAGE</button>
+            <button id="btn-video">VIDEO</button>
+            <button id="btn-webcam">LIVE CAMERA</button>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="viewport-header">DETECTION VIEW</div>
+                <div id="viewport" class="viewport">
+                    <img id="result-img" src="" style="display: none;" />
+                    <video id="input-video" style="display: none;" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div id="upload-prompt" class="upload-prompt">
+                        <p>Drag and drop image/video here or click to upload</p>
+                        <input type="file" id="file-input" accept="image/*,video/*" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-panel">
+                <div class="stats-box">
+                    <div class="stat-row">
+                        <span>PEOPLE DETECTED</span>
+                        <span id="stat-people">0</span>
+                    </div>
+                    <div class="stat-row" style="color: var(--compliant)">
+                        <span>COMPLIANT</span>
+                        <span id="stat-compliant">0</span>
+                    </div>
+                    <div class="stat-row warning">
+                        <span>VIOLATIONS</span>
+                        <span id="stat-violations">0</span>
+                    </div>
+                    <div class="stat-row system">
+                        <span>FPS</span>
+                        <span id="stat-fps">0.0</span>
+                    </div>
+                </div>
+
+                <div class="status-box">
+                    <h3>PPE STATUS</h3>
+                    <div id="ppe-status-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="status-box">
+                    <h3>SAFETY STATUS</h3>
+                    <div id="safety-status" class="compliant">
+                        ✓ COMPLIANT
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

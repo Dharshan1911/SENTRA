@@ -1,0 +1,192 @@
+:root {
+    --bg-dark: #121212;
+    --panel-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --accent: #3498db;
+    --compliant: #2ecc71;
+    --warning: #f1c40f;
+    --violation: #e74c3c;
+    --system: #3498db;
+    --border: #333333;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #888;
+    font-weight: normal;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--panel-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #2a2a2a;
+}
+
+button.active {
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-panel {
+    flex: 2;
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.viewport-header {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.viewport {
+    flex: 1;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+#result-img, #input-video {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.upload-prompt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #888;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stats-box, .status-box {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-row span:last-child {
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.stat-row.warning { color: var(--violation); }
+.stat-row.system { color: var(--system); }
+
+h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+#ppe-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ppe-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ppe-detected { color: var(--compliant); }
+.ppe-missing { color: var(--violation); }
+
+#safety-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+#safety-status.compliant { color: var(--compliant); }
+#safety-status.non-compliant { color: var(--violation); }
